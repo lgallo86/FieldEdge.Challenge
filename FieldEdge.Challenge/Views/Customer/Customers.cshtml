@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FieldEdge.Challenge.ApplicationCore.Models.CustomerModel>
+
+@{
+    ViewData["Title"] = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link href="~/lib/bootstrap-vue/bootstrap-vue.css" rel="stylesheet" />
+<script src="https://unpkg.com/vue@2"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="/CustomResources/Ajax.js"></script>
+<script src="https://unpkg.com/vue@2"></script>
+<script src="~/lib/bootstrap-vue/bootstrap-vue.js"></script>
+
+
+<h1>Customers List</h1>
+
+<div id="divCustomer">
+    <div class="col-md-12">
+        <b-alert :show="dismissCountDown" dismissible variant="info" @@dismissed="dismissCountDown=0" @@dismiss-count-down="countDownChanged"> {{ messageDelete }} </b-alert>
+    </div>
+    <div class="col-md-12">
+        <b-table id="customerTable" :items="CustomerList" :per-page="perPage" :current-page="currentPage" :fields="fields" responsive striped hover small>
+            <template #cell(email)="data">
+                <a :href='"mailto:" + data.value'>{{ data.value }}</a>
+            </template>
+            <template #cell(edit)="row">
+                <a class="form-control" @@click="EditItem(row.item)">
+                    <i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Edit" style="cursor: pointer;"></i>
+                </a>
+            </template>
+            <template #cell(delete)="row">
+                <a class="form-control" @@click="DeleteItem(row.item)">
+                    <i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="Delete" style="cursor: pointer;"></i>
+                </a>
+            </template>
+        </b-table>
+        <b-pagination v-model="currentPage" :total-rows="rows" :per-page="perPage" aria-controls="customerTable"></b-pagination>
+    </div>
+    <div class="col-lg-12">
+        <a href="#" class="btn btn-success waves-effect waves-light float-right" @@click="AddNew">
+            <span class="btn-label"><i class="fa fa-plus-circle "></i></span>
+            Add New
+        </a>
+    </div>
+    <div>
+        <b-modal id="modal_Delete" title="Delete Customer" @@ok="handleOk">
+            <p class="my-4">Are you sure you want to delete this item?</p>
+        </b-modal>
+    </div>
+</div>
+<script src="/CustomResources/Customers.js"></script>

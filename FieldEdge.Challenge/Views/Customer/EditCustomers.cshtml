@@ -1,0 +1,79 @@
+﻿@model FieldEdge.Challenge.Models.CustomerViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var id = Model.Id;
+    
+}
+<script src="https://unpkg.com/vue@2"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="/CustomResources/Ajax.js"></script>
+
+<div id="divEditCustomer" :data="setData(@id)">
+    <div class="text-center">
+        <h1 class="display-4">{{Title}}</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label class="col-form-label">First Name</label>
+            <div class="input-group">
+                <input class="form-control" type="text" required="" v-model="firstName" id="firstName"
+                       v-bind:class="{'InvalidInput':InvalidfirstName}" @@blur="PressAnyKey"
+                       placeholder="First Name">
+            </div>
+            <span class="text-danger" v-if="InvalidfirstName">*Required </span>
+        </div>
+        <div class="col-md-6">
+            <label class="col-form-label">Last Name</label>
+            <div class="input-group">
+                <input class="form-control" type="text" required="" v-model="lastName" id="lastName"
+                       v-bind:class="{'InvalidInput':InvalidlastName}" @@blur="PressAnyKey"
+                       placeholder="Last Name">
+            </div>
+            <span class="text-danger" v-if="InvalidlastName">*Required </span>
+        </div>
+        <div class="col-md-6">
+            <label class="col-form-label">Email</label>
+            <div class="input-group">
+                <input class="form-control" type="email" id="emailddress" required="" v-model="emailddress"
+                       v-bind:class="{'InvalidInput':InvalidEmail}" v-on:keyup="PressAnyKey"
+                       placeholder="Email">
+            </div>
+            <span class="text-danger" v-if="InvalidEmail">*Required</span><br v-if="InvalidEmail" />
+        </div>
+
+        <div class="col-md-6">
+            <label class="col-form-label">Phone Number</label>
+            <div class="input-group">
+                <input class="form-control" type="text" v-model="phone" id="phone" placeholder="Phone">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label class="col-form-label">Country Code</label>
+            <div class="input-group">
+                <input class="form-control" type="text" v-model="countryCode" id="countryCode" placeholder="Country Code">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label class="col-form-label">Balance</label>
+            <div class="input-group">
+                <input class="form-control" type="text" v-model="balance" id="balance" placeholder="Balance">
+            </div>
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col text-right">
+            <button class="btn btn-secondary waves-effect waves-light" type="button" @@click="CancelEdit();">
+                <span class="btn-label">
+                    <i class="fa fa-ban"></i>
+                </span>  Cancel
+            </button>
+            <button class="btn btn-success waves-effect waves-light" type="button" @@click="Save();">
+                <span class="btn-label">
+                    <i class="fa fa-save"></i>
+                </span> Save
+            </button>
+        </div>
+    </div>
+
+</div>
+<script src="/CustomResources/EditCustomer.js"></script>

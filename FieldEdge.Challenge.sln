@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldEdge.Challenge", "FieldEdge.Challenge\FieldEdge.Challenge.csproj", "{8DB2675D-D775-4564-8C47-247DECD09949}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldEdge.Challenge.ApplicationCore", "FieldEdge.Challenge.ApplicationCore\FieldEdge.Challenge.ApplicationCore.csproj", "{7FE61256-58B4-491D-8AD5-6F18AEF1FE20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DB2675D-D775-4564-8C47-247DECD09949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB2675D-D775-4564-8C47-247DECD09949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB2675D-D775-4564-8C47-247DECD09949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB2675D-D775-4564-8C47-247DECD09949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FE61256-58B4-491D-8AD5-6F18AEF1FE20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FE61256-58B4-491D-8AD5-6F18AEF1FE20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FE61256-58B4-491D-8AD5-6F18AEF1FE20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FE61256-58B4-491D-8AD5-6F18AEF1FE20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00B09E56-AC6B-4B28-8765-A8EEC3BB4C3C}
+	EndGlobalSection
+EndGlobal
